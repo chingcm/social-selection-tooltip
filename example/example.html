@@ -1,0 +1,292 @@
+<head>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.qrcode/1.0/jquery.qrcode.min.js"></script>
+    <script src="../js/social.selection.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/social.selection.css">
+    <link rel="stylesheet" type="text/css" href="../css/example.css">
+</head>
+
+<body>
+    <div id="content">
+        <h2>This is an example page</h2>
+        <div id="default" class="demo">
+            <h3>Default</h3>
+            <p>This demonstrate the default tooltip display without extra settings.</p>
+            <p>Default there will be two comps:</p>
+            <ul>
+                <li>Search: Google, Bing and DuckDuckGo</li>
+                <li>Share: Facebook, Twitter, Reddit, WhatsApp</li>
+            </ul>
+        </div>
+        <div id="search" class="demo">
+            <h3>Search Component</h3>
+            <p>This demonstrate all the platform support in Search Component with default settings.</p>
+            <p>Supported platforms:</p>
+            <ul class="list">
+                <li>Ask</li>
+                <li>Baidu</li>
+                <li>Bing</li>
+                <li>DuckDuckGo</li>
+                <li>Google</li>
+                <li>Wikipedia</li>
+                <li>WolframAlpha</li>
+                <li>Yahoo</li>
+                <li>Yandex</li>
+            </ul>
+        </div>
+        <div id="share" class="demo">
+            <h3>Share Component</h3>
+            <p>This demonstrate all the platform support in Share Component with default settings.</p>
+            <p>Supported platforms:</p>
+            <ul class="list">
+                <li>Blogger</li>
+                <li>Digg</li>
+                <li>Douban</li>
+                <li>EverNote</li>
+                <li>Facebook</li>
+                <li>GMail</li>
+                <li>Line</li>
+                <li>LinkedIn</li>
+                <li>Pinterest</li>
+                <li>QR Code</li>
+                <li>QQ Share</li>
+                <li>QQ Zone</li>
+                <li>Reddit</li>
+                <li>RenRen</li>
+                <li>SMS</li>
+                <li>Telegram</li>
+                <li>Tumblr</li>
+                <li>Twitter</li>
+                <li>Weibo</li>
+                <li>WhatsApp</li>
+            </ul>
+        </div>
+        <div id="visit" class="demo">
+            <h3>Visit Component</h3>
+            <p>This demonstrate all the platform support in Visit Component with default settings.</p>
+            <p>Supported platforms:</p>
+            <ul class="list">
+                <li>Blogger</li>
+                <li>CodePen</li>
+                <li>Discord</li>
+                <li>Facebook</li>
+                <li>GitHub</li>
+                <li>Instagram</li>
+                <li>Line</li>
+                <li>LinkedIn</li>
+                <li>Patreon</li>
+                <li>Pinterest</li>
+                <li>Reddit</li>
+                <li>SoundCloud</li>
+                <li>Stack Overflow</li>
+                <li>Telegram</li>
+                <li>Tumblr</li>
+                <li>Twitch</li>
+                <li>Twitter</li>
+                <li>WeChat</li>
+                <li>Weibo</li>
+                <li>WhatsApp</li>
+                <li>Wikipedia</li>
+                <li>Xing</li>
+                <li>Yelp</li>
+                <li>YouTube</li>
+            </ul>
+        </div>
+        <div class="demo">
+            <h3>Customize Component</h3>
+            <div id="custom0" class="demo demoGroup">
+                <h4>Original</h4>
+                <p>Orignal tooltip of Search Component. Text selected will be the keywords to search.</p>
+            </div>
+            <div id="custom1" class="demo demoGroup">
+                <h4>Change icon</h4>
+                <p>The icons of the Search Component and Wikipedia are exchanged.</p>
+            </div>
+            <div id="custom2" class="demo demoGroup">
+                <h4>More Icons</h4>
+                <p>This tooltip contains 5 icons a row.</p>
+            </div>
+            <div id="custom3" class="demo demoGroup">
+                <h4>Change Keywords</h4>
+                <p>The keywords to search will be "Hello World".</p>
+            </div>
+            <div id="custom4" class="demo demoGroup">
+                <h4>Change Locale</h4>
+                <p>Message shown on hovering a icon and Google's name are different now.</p>
+            </div>
+            <div id="custom5" class="demo demoGroup">
+                <h4>New Platform</h4>
+                <p>A brand new platform can be added to Component: Google2.</p>
+            </div>
+        </div>
+        <div id="new" class="demo">
+            <h3>New Component</h3>
+            <p>This demonstrate adding a QR Code Component to the tooltip.</p>
+            <p>The new platform requires jQuery plugin to generate QR Code (Scripts included manually). Click on the icon to see what it does.</p>
+            <p>Our tooltip script already provided a simple script of generating QR Code. You can also overwrite our function to meet your needs</p>
+        </div>
+        <div id="html" class="demo">
+            <h3>HTML</h3>
+            <p>You can also use pure HTML to initiation the plugin.</p>
+            <selecton-tooltip data-target="#html" data-comps="foo">
+                <component-search>
+                    <google></google>
+                </component-search>
+                <component-share>
+                    <facebook></facebook>
+                </component-share>
+                <component-visit data-github="abc"></component-visit>
+                <component-foo data-icon-path="../img/qrcode.svg" data-text="123">
+                    <bar1 data-name="Bar1" data-link="{{bar1}}"  data-icon-path="../img/wechat.svg" data-require="qrcode"></bar1>
+                </component-foo>
+            </selecton-tooltip>
+        </div>
+    </div>
+</body>
+<script>
+    let search = {
+        components: {
+            search: {
+                enabled: "all"
+            },
+            share: {
+                enabled: "none"
+            },
+            visit: {
+                enabled: "none"
+            },
+        }
+    }
+    let share = {
+        components: {
+            search: {
+                enabled: "none"
+            },
+            share: {
+                enabled: "all"
+            },
+            visit: {
+                enabled: "none"
+            },
+        }
+    }
+    let visit = {
+        dev: true,
+        components: {
+            search: {
+                enabled: "none"
+            },
+            share: {
+                enabled: "none"
+            },
+            visit: {
+                enabled: "all"
+            },
+        }
+    }
+    let custom = {
+        components: {
+            search: {
+                enabled: "all"
+            },
+            share: {
+                enabled: "none"
+            },
+            visit: {
+                enabled: "none"
+            },
+        }
+    }
+    let newComp = {
+        components: {
+            search: {
+                enabled: ["google", "bing"]
+            },
+            share: {
+                enabled: ["facebook", "line"]
+            },
+            visit: {
+                facebook: "default",
+                youtube: "default"
+            },
+            foo: {
+                enabled: ["bar1"],
+                url: "google.com",
+                iconPath: "../img/qrcode.svg",
+                platforms: {
+                    bar1: {
+                        link: "{{url}}",
+                        iconPath: "../img/wechat.svg",
+                        require: ["qrcode"]
+                    }
+                }
+            }
+        },
+        locale: {
+            components: {
+                foo: {
+                    title: "Share QR Code to {{platform}}",
+                    platforms: {
+                        bar1: "Bar1"
+                    },
+                }
+            }
+        },
+    }
+    let customConfig = [
+        {},
+        {
+            components: {
+                search: {
+                    iconPath: "../img/wikipedia.svg",
+                    platforms: {
+                        wikipedia: {
+                            iconPath: "../img/search.svg"
+                        }
+                    }
+                },
+            }
+        },
+        { itemsPerColumn: 5 },
+        {
+            components: {
+                search: {
+                    text: "Hello World",
+                }
+            }
+        },
+        {
+            locale: {
+                components: {
+                    search: {
+                        title: "{{platform}} Custom Search",
+                    }
+                },
+                platforms: {
+                    google: "New Google"
+                }
+            }
+        },
+        {
+            components: {
+                search: {
+                    platforms: {
+                        google2: {
+                            link: "https://www.google.com/search?q={{text}}",
+                            name: "Google2",
+                            iconPath: "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"
+                        },
+                    },
+                }
+            }
+        },
+    ]
+    $("#default").socialSelection();
+    $("#search").socialSelection(search);
+    $("#share").socialSelection(share);
+    $("#visit").socialSelection(visit);
+    $("#new").socialSelection(newComp);
+    customConfig.map((v, i) => {
+        $("#custom" + i).socialSelection($.fn.deepExtend(v, custom));
+    })
+</script>
