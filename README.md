@@ -16,6 +16,8 @@ If you are maintaining multiple personal pages, you can setup a shortcut for use
 - Customizable Component
 If you want more than this plugin provide, you can always write your own component or overwrite some functions.
 
+Check the [demo](https://chingcm.github.io/social-selection-tooltip/example/example.html) to see how it works.
+
 ## Setup
 Include the jQuery script and any other jQuery plugins you need to use for this Plugin:
 ```
